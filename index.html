@@ -4,277 +4,758 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Brain Boost Quiz App</title>
+<meta name="description" content="Privacy Policy for Brain Boost Quiz App.">
+<meta name="theme-color" content="#4A17C4">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/bricolage-grotesque-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/atkinson-hyperlegible-next-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  /* =====================================================================
+     Brain Boost privacy policy: "Level Path". DESIGN.md explains the system.
+     ===================================================================== */
 
+  /* ---- Fonts: self-hosted, so the page makes no request to Google ---- */
+  @font-face { font-family: 'Bricolage Grotesque'; src: url('assets/fonts/bricolage-grotesque-800-latin.woff2') format('woff2');
+    font-weight: 800; font-style: normal; font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  @font-face { font-family: 'Atkinson Hyperlegible Next'; src: url('assets/fonts/atkinson-hyperlegible-next-latin.woff2') format('woff2');
+    font-weight: 400 700; font-style: normal; font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  @font-face { font-family: 'Bricolage Fallback'; src: local('Arial Bold'), local('Arial-BoldMT'), local('Roboto Bold'), local('Roboto-Bold');
+    font-weight: 800; size-adjust: 91.6%; ascent-override: 101.5%; descent-override: 29.5%; line-gap-override: 0%; }
+  @font-face { font-family: 'Atkinson Fallback'; src: local('Arial'), local('ArialMT'), local('Roboto'), local('Roboto-Regular');
+    font-weight: 400 700; size-adjust: 98.8%; ascent-override: 99.2%; descent-override: 32.4%; line-gap-override: 0%; }
+
+  /* ---- Tokens: every colour, size, space and curve lives here ---- */
   :root {
-    --purple: #7C3AED;
-    --purple-lt: #EDE9FE;
-    --text: #111827;
-    --muted: #6B7280;
-    --border: #E5E7EB;
-    --bg: #F9FAFB;
+    /* colour */
+    --bb-violet:    #4A17C4; /* Boost Violet: masthead, contact panel, table header band */
+    --bb-tile:      #5B21D6; /* level tiles, current node, path fill */
+    --bb-tile-hi:   #6D33E8; /* enamel highlight (graphic only) */
+    --bb-link:      #5520C8; /* links, focus ring on light grounds */
+    --bb-night:     #1A0B3D; /* footer, round buttons */
+    --bb-pink:      #FF5FAE; /* Brain Pink: brain enamel (graphic only, never text) */
+    --bb-pink-lt:   #FFB8DD; /* pink text on violet or night; selection */
+    --bb-pink-deep: #D61F7A; /* current-node ring, link hover underline (non-text) */
+    --bb-gold:      #FFC83D; /* XP Gold: metal, specks, passed nodes, e-mail pill, focus on dark */
+    --bb-gold-lt:   #FFE39A; /* gold text on night */
+    --bb-gold-mid:  #E0A92A; /* rim, lit side (graphic) */
+    --bb-gold-deep: #B07A12; /* rim, shaded side (graphic) */
+    --bb-lilac:     #CDBDFF; /* secondary text on violet or night */
+    --bb-paper:     #F7F4FF; /* page ground */
+    --bb-card:      #FFFFFF; /* meta card, table, contents panel */
+    --bb-tint:      #EEE7FF; /* lede panel, upcoming nodes, phone table legend */
+    --bb-rule:      #D9CFF6; /* hairlines, unfilled track (decorative) */
+    --bb-node-line: #7C5CE0; /* upcoming-node border (non-text) */
+    --bb-ink:       #1C1433; /* headings and body */
+    --bb-ink-2:     #4B4268; /* labels, contents labels */
+
+    /* type */
+    --font-display: 'Bricolage Grotesque', 'Bricolage Fallback', Arial, sans-serif;
+    --font-body: 'Atkinson Hyperlegible Next', 'Atkinson Fallback', Arial, sans-serif;
+    --fs-h1:   clamp(3.25rem, 2rem + 5vw, 6rem);             /* 52 -> 96 */
+    --fs-sub:  clamp(1.1875rem, 1rem + .6vw, 1.5rem);        /* 19 -> 24 */
+    --fs-h2:   clamp(1.4375rem, 1.1rem + 1.2vw, 1.875rem);   /* 23 -> 30 */
+    --fs-h3:   clamp(1.75rem, 1.4rem + 1.1vw, 2.25rem);      /* 28 -> 36 */
+    --fs-lede: clamp(1.15625rem, 1rem + .6vw, 1.3125rem);    /* 18.5 -> 21 */
+    --fs-body: 1.125rem;                                     /* 18; 17 under 600px */
+    --ext: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 7h9v9M17 7L7 17' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+    /* spacing (8px rhythm) */
+    --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 24px;
+    --sp-6: 32px; --sp-7: 48px; --sp-8: 64px; --sp-9: 88px; --sp-10: 120px;
+
+    /* radius */
+    --r-1: 10px; --r-2: 16px; --r-3: 24px; --r-4: 28px;
+    --r-node: 9px; --r-tile: 30%; --r-pill: 999px;
+
+    /* shadow: always an offset plus a soft blur */
+    --sh-1: 0 2px 6px rgba(42,15,92,.08), 0 10px 30px -12px rgba(42,15,92,.28);
+    --sh-2: 0 3px 8px rgba(26,11,61,.12), 0 22px 44px -18px rgba(26,11,61,.45);
+    --sh-tile: 0 8px 16px -8px rgba(42,15,92,.55), inset 0 -4px 6px -2px rgba(26,11,61,.45), inset 0 2px 3px rgba(255,255,255,.18);
+    --sh-pill: 0 10px 22px -10px rgba(10,3,30,.6);
+    --sh-btn: 0 4px 14px rgba(0,0,0,.18);
+
+    /* motion */
+    --ease-out: cubic-bezier(.16,1,.3,1);
+    --dur-1: 180ms; --dur-2: 220ms;
+
+    /* layout */
+    --col: 576px;      /* reading column */
+    --tile: 56px;      /* section tile */
+    --gl: 24px;        /* left gutter */
+    --gr: 24px;        /* right gutter: below 1100px it keeps the companion's lane clear */
+  }
+  html.motion-off { --dur-1: 0ms; --dur-2: 0ms; }
+  @media (max-width: 1099px) { :root { --gr: calc(clamp(46px, 7.5vw, 130px) + 28px); } }
+  /* Phones: 50px keeps the kit's narrow lane (centre vw - 21.4, body to vw - 38.6, wander about 11px) off the text. */
+  @media (max-width: 719px)  { :root { --gr: 50px; } }
+  @media (max-width: 599px)  { :root { --gl: 16px; --tile: 44px; --fs-body: 1.0625rem; } }
+
+  /* ---- Base ---- */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { color-scheme: light; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; hyphens: manual;
+    scrollbar-color: #7C5CE0 #EEE7FF; scrollbar-width: thin; }
+  @media (prefers-reduced-motion: no-preference) { html.js:not(.motion-off) { scroll-behavior: smooth; } }
+  body { margin: 0; background: var(--bb-paper); color: var(--bb-ink); caret-color: var(--bb-link);
+    font: 400 var(--fs-body)/1.6 var(--font-body); }
+  h1, h2, h3, p, ul, ol { margin: 0; }
+  h1, h2, h3 { text-wrap: balance; }
+  p, li { text-wrap: pretty; }
+  strong { font-weight: 700; }
+  ::selection { background: var(--bb-pink-lt); color: var(--bb-ink); }
+  a { color: var(--bb-link); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: .2em;
+    text-decoration-color: color-mix(in srgb, var(--bb-link) 55%, transparent);
+    transition: text-decoration-color var(--dur-1) var(--ease-out); }
+  a:hover { text-decoration-color: var(--bb-pink-deep); }
+  a[target="_blank"]::after { content: ""; display: inline-block; width: .7em; height: .7em; margin-left: .2em; vertical-align: .05em;
+    background: currentColor; -webkit-mask: var(--ext) no-repeat center / contain; mask: var(--ext) no-repeat center / contain; }
+  :focus-visible { outline: 3px solid var(--bb-link); outline-offset: 2px; }
+  .mast :focus-visible, .contact :focus-visible, .foot :focus-visible { outline-color: var(--bb-gold); }
+  #policy:focus, #contents:focus { outline: none; }
+  .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+  /* ---- Masthead: flat violet, the title, and the Boost Tile ---- */
+  .mast { background: var(--bb-violet); color: #fff; padding: 20px var(--gr) 80px var(--gl); overflow-x: clip; }
+  .mast-in { max-width: var(--col); margin: 0 auto; }
+  .mast h1 { margin-top: 8px; max-width: min-content; color: #fff;
+    font: 800 var(--fs-h1)/.92 var(--font-display); letter-spacing: -0.035em; }
+  .mast .sub { margin-top: 10px; color: var(--bb-pink-lt); font: 800 var(--fs-sub)/1.2 var(--font-display); letter-spacing: -0.005em; }
+  @media (min-width: 720px) {
+    .mast { padding-top: 48px; padding-bottom: 96px; }
+    .mast-in { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "title art" "sub art";
+      column-gap: 48px; align-items: end; }
+    .mast h1 { grid-area: title; margin-top: 0; }
+    .mast .sub { grid-area: sub; align-self: start; margin-top: 16px; }
+    .mast .logo { grid-area: art; align-self: center; }
+  }
+  @media (min-width: 1100px) {
+    .mast { padding: 56px 24px 104px; }
+    .mast-in { max-width: 824px; }
+  }
+  @media (min-width: 1280px) { .mast-in { max-width: 888px; } }
+
+  /* The Boost Tile: thick violet enamel, gold rim, a pink brain in raised gold, real CSS 3D.
+     --p (0 to 1) comes from assets/boost.js; 0 is the rest pose (also reduced motion and no JS). */
+  .logo { --tsz: 256px; position: relative; width: 336px; height: 300px; perspective: 900px; }
+  .logo .glow { position: absolute; inset: 0; background: radial-gradient(closest-side, rgba(255,200,61,.20), rgba(255,200,61,0) 72%); }
+  .logo .tile { position: absolute; left: 50%; top: 50%; width: var(--tsz); height: var(--tsz);
+    margin: calc(var(--tsz) / -2) 0 0 calc(var(--tsz) / -2); border-radius: var(--r-tile); transform-style: preserve-3d; }
+  .tile-turn { position: absolute; inset: 0; transform-style: preserve-3d; }
+  .mast .tile-turn { transform: translateZ(calc(var(--p, 0) * var(--tsz) * .11))
+      rotateX(calc(16deg - var(--p, 0) * 10deg)) rotateY(calc(-26deg + var(--p, 0) * 38deg)) rotateZ(calc(-6deg + var(--p, 0) * 6deg)); }
+  .rim { position: absolute; inset: 0; border-radius: var(--r-tile); background: var(--c);
+    transform: translateZ(calc(var(--i) * var(--tsz) / -220)); }
+  .face { position: absolute; inset: 0; border-radius: var(--r-tile); overflow: hidden;
+    background: radial-gradient(120% 120% at 30% 22%, var(--bb-tile-hi) 0%, var(--bb-tile) 46%, var(--bb-violet) 100%);
+    box-shadow: inset 0 0 0 calc(var(--tsz) * .03) var(--bb-gold), inset 0 0 0 calc(var(--tsz) * .046) var(--bb-gold-deep); }
+  .face::after { content: ""; position: absolute; inset: 0; mix-blend-mode: soft-light; background-size: 260% 100%;
+    background-image: linear-gradient(115deg, transparent 35%, rgba(255,255,255,.22) 48%, transparent 62%);
+    background-position: calc(110% - var(--p, 0) * 120%) 0; }
+  .enamel, .metal { position: absolute; left: 13%; top: 13%; width: 74%; height: 74%; overflow: visible; }
+  .enamel { transform: translateZ(calc(var(--tsz) / 128)); }
+  .metal { transform: translateZ(calc(var(--tsz) / 64)); }
+  .spark { position: absolute; left: 64%; top: 6%; width: 20%; height: 20%; overflow: visible; transform: translateZ(calc(var(--tsz) / 16)); }
+  .tile-shadow { position: absolute; left: 50%; top: calc(50% + var(--tsz) * .5 + 6px); width: calc(var(--tsz) * .9);
+    height: calc(var(--tsz) * .16); margin-left: calc(var(--tsz) * -.45); border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(15,4,40,.55), rgba(15,4,40,0)); filter: blur(12px); }
+
+  /* Gold specks: four-point sparks and dots. Coordinates are each speck's centre in the art box. */
+  .specks { position: absolute; inset: 0; pointer-events: none; }
+  .speck { --op: var(--o); position: absolute; display: block; left: var(--x); top: var(--y); width: var(--s); height: var(--s);
+    margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2); opacity: var(--op); overflow: visible; fill: var(--bb-gold); }
+  .speck.dot { border-radius: 50%; background: var(--bb-gold); }
+  .speck:nth-child(8n+1) { --d: 4.6s; --dl: 0s; }
+  .speck:nth-child(8n+2) { --d: 6.4s; --dl: -.7s; }
+  .speck:nth-child(8n+3) { --d: 5.2s; --dl: -1.4s; }
+  .speck:nth-child(8n+4) { --d: 7s;   --dl: -2.1s; }
+  .speck:nth-child(8n+5) { --d: 4.2s; --dl: -2.8s; }
+  .speck:nth-child(8n+6) { --d: 5.8s; --dl: -3.5s; }
+  .speck:nth-child(8n+7) { --d: 6.8s; --dl: -4.2s; }
+  .speck:nth-child(8n+8) { --d: 4.9s; --dl: -4.9s; }
+
+  @media (max-width: 1099px) { .logo { --tsz: 200px; width: 260px; height: 240px; } }
+  @media (max-width: 719px) {
+    .logo { --tsz: 104px; width: 200px; height: 120px; perspective: 600px; }
+    .logo .tile, .logo .tile-shadow { left: calc(var(--tsz) / 2); }
+    .logo .tile-shadow { top: calc(50% + var(--tsz) * .5 + 2px); height: calc(var(--tsz) * .1); filter: blur(5px); }
+    .logo .speck { --op: var(--po); left: var(--px); top: var(--py); width: var(--ps); height: var(--ps);
+      margin: calc(var(--ps) / -2) 0 0 calc(var(--ps) / -2); }
+    .logo .speck.dk { display: none; }
+    /* On phones the art sits right above the title: no parallax drift, so no speck ever crosses "Privacy". */
+    .logo .specks { translate: none !important; }
   }
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: var(--bg); color: var(--text);
-    line-height: 1.7; font-size: 16px;
+  /* ---- Main: meta card, then lede + contents + the policy ---- */
+  main { display: block; padding: 0 var(--gr) 0 var(--gl); }
+  .meta { position: relative; z-index: 1; max-width: var(--col); margin: -56px auto 0;
+    display: grid; grid-template-columns: 1fr 1fr; padding: 24px 28px;
+    background: var(--bb-card); border-radius: var(--r-3); box-shadow: var(--sh-2); }
+  .meta strong { display: block; margin-bottom: 4px; color: var(--bb-ink-2); font: 700 14px/1.3 var(--font-body); }
+  .meta .v { color: var(--bb-ink); font: 800 18px/1.2 var(--font-display); font-variant-numeric: tabular-nums; }
+  .meta .v a { padding-block: 3px; color: var(--bb-link); overflow-wrap: anywhere; }
+  /* 720-1279: 2 x 2 with hairlines between the cells */
+  .meta > div { padding: 12px 18px; }
+  .meta > div:nth-child(odd) { padding-left: 0; }
+  .meta > div:nth-child(even) { padding-right: 0; border-left: 1px solid var(--bb-rule); }
+  .meta > div:nth-child(-n+2) { padding-top: 0; }
+  .meta > div:nth-child(n+3) { padding-bottom: 0; border-top: 1px solid var(--bb-rule); }
+
+  .policy-grid { max-width: var(--col); margin: 48px auto 0; }
+  .highlight { padding: 28px 32px; border-radius: var(--r-3); background: var(--bb-tint); color: var(--bb-ink);
+    font: 500 var(--fs-lede)/1.5 var(--font-body); text-wrap: pretty; }
+  .policy-body { margin-top: 64px; }
+
+  @media (min-width: 1100px) {
+    main { padding: 0 24px; }
+    .meta { max-width: 824px; }
+    .policy-grid { max-width: none; display: grid; grid-template-columns: 216px 560px; column-gap: 48px;
+      justify-content: center; align-items: start; grid-template-areas: "rail lede" "rail body"; }
+    .highlight { grid-area: lede; }
+    .policy-body { grid-area: body; }
+  }
+  @media (min-width: 1280px) {
+    .meta { max-width: 888px; grid-template-columns: 1.1fr .85fr .85fr 1.35fr; }
+    .meta > div, .meta > div:nth-child(n) { padding: 0 18px; border-top: 0; border-left: 0; }
+    .meta > div:first-child { padding-left: 0; }
+    .meta > div:last-child { padding-right: 0; }
+    .meta > div:nth-child(n+2) { border-left: 1px solid var(--bb-rule); }
+    .meta .v { font-size: 19px; }
+    .policy-grid { grid-template-columns: 240px 576px; column-gap: 72px; }
+  }
+  @media (max-width: 719px) {
+    .meta { margin-top: -48px; padding: 18px 20px; }
+    .meta > div, .meta > div:nth-child(n) { padding: 12px 0; border: 0; }
+    .meta > div:nth-child(1), .meta > div:nth-child(4) { grid-column: 1 / -1; }
+    .meta > div:nth-child(1) { padding-top: 0; }
+    .meta > div:nth-child(n+2) { border-top: 1px solid var(--bb-rule); }
+    .meta > div:nth-child(3) { padding-left: 14px; border-left: 1px solid var(--bb-rule); }
+    .meta > div:nth-child(4) { padding-bottom: 0; }
+    .meta .v { font-size: 17px; }
+  }
+  @media (max-width: 599px) { .highlight { padding: 20px; } }
+  @media (max-width: 360px) {
+    .meta { grid-template-columns: 1fr; }
+    .meta > div:nth-child(3) { padding-left: 0; border-left: 0; }
   }
 
-  /* Header */
-  header {
-    background: linear-gradient(135deg, #4C1D95, #7C3AED, #4F46E5);
-    padding: 60px 24px 48px; text-align: center; color: #fff;
-  }
-  header .logo { font-size: 48px; margin-bottom: 12px; }
-  header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
-  header p { font-size: 15px; opacity: .75; }
-
-  /* Container */
-  .container { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
-
-  /* Meta bar */
-  .meta {
-    display: flex; flex-wrap: wrap; gap: 20px; align-items: center;
-    background: #fff; border: 1px solid var(--border);
-    border-radius: 14px; padding: 18px 22px; margin-bottom: 40px;
-    font-size: 14px; color: var(--muted);
-  }
-  .meta strong { color: var(--text); }
-
-  /* Section */
-  section { margin-bottom: 40px; }
-  h2 {
-    font-size: 20px; font-weight: 800; color: var(--text);
-    margin-bottom: 14px; padding-bottom: 10px;
-    border-bottom: 2px solid var(--purple-lt);
-    display: flex; align-items: center; gap: 10px;
-  }
-  h2 .icon { font-size: 20px; }
-  p { margin-bottom: 14px; color: #374151; }
-  ul { margin: 10px 0 14px 0; padding-left: 22px; }
-  li { margin-bottom: 8px; color: #374151; }
-
-  /* Highlight box */
-  .highlight {
-    background: var(--purple-lt); border-left: 4px solid var(--purple);
-    border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 18px 0;
-    font-size: 15px;
+  /* ---- Contents: a panel under 1100px, a sticky level-path rail beside the column above it ---- */
+  .toc { --ring-gap: var(--bb-card); margin-top: 32px; padding: 20px 20px 12px; background: var(--bb-card);
+    border-radius: var(--r-2); box-shadow: var(--sh-1); }
+  .toc h2 { margin-bottom: 8px; color: var(--bb-ink); font: 800 18px/1.2 var(--font-display); letter-spacing: -0.005em; }
+  .toc ol { position: relative; list-style: none; padding: 0; }
+  .toc li { break-inside: avoid; }
+  .toc a { display: flex; align-items: center; gap: 12px; min-height: 44px; border-radius: 12px; color: var(--bb-ink-2);
+    text-decoration: none; font: 600 16px/1.3 var(--font-body); }
+  .toc a:hover .label { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: .2em; }
+  .node { --fold: var(--bb-tint); position: relative; z-index: 1; flex: none; display: grid; place-items: center;
+    width: 28px; height: 28px; border-radius: var(--r-node); border: 1.5px solid var(--bb-node-line);
+    background: var(--bb-tint); color: var(--bb-link); font: 800 13px/1 var(--font-display); font-variant-numeric: tabular-nums;
+    transition: background-color var(--dur-1) var(--ease-out), box-shadow var(--dur-1) var(--ease-out), border-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out); }
+  .node svg { width: 18px; height: 18px; }
+  .node--end { color: var(--bb-tile); }
+  .node--end use:first-child { fill: currentColor; }
+  .node--end use:last-child { stroke: var(--fold); stroke-width: 1.5; }
+  .toc a[aria-current="location"] { color: var(--bb-ink); font-weight: 700; }
+  .toc a[aria-current="location"] .node { background: var(--bb-tile); border-color: var(--bb-tile); color: #fff;
+    box-shadow: 0 0 0 2px var(--ring-gap), 0 0 0 5px var(--bb-pink-deep); }
+  .toc li.is-passed .node, .toc li.end.is-done .node { --fold: var(--bb-gold); background: var(--bb-gold); border-color: var(--bb-ink-2); color: var(--bb-ink); }
+  .toc li.end.is-done a { color: var(--bb-ink); }
+  @media (min-width: 720px) and (max-width: 1099px) { .toc ol { columns: 2; column-gap: 32px; } }
+  @media (min-width: 1100px) {
+    .toc { --ring-gap: var(--bb-paper); grid-area: rail; align-self: start; position: sticky; top: 32px;
+      max-height: calc(100vh - 64px); overflow: auto; margin: -8px -12px 0 -8px; padding: 8px 12px 8px 8px;
+      background: none; border-radius: 0; box-shadow: none; }
+    .toc h2 { margin-bottom: 12px; font-size: 20px; }
+    .toc a { font-size: 15px; }
+    .toc ol::before, .toc ol::after { content: ""; position: absolute; left: 12.5px; top: 22px; width: 3px; border-radius: 2px; }
+    .toc ol::before { bottom: 22px; background: var(--bb-rule); }
+    .toc ol::after { height: var(--fill, 0px); background: var(--bb-tile); transition: height var(--dur-2) var(--ease-out); }
   }
 
-  /* Table */
-  table { width: 100%; border-collapse: collapse; margin: 16px 0 20px; font-size: 14px; }
-  th { background: var(--purple-lt); color: var(--purple); font-weight: 700; padding: 12px 16px; text-align: left; }
-  td { padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  tr:last-child td { border-bottom: none; }
-
-  /* Contact */
-  .contact {
-    background: #fff; border: 1px solid var(--border);
-    border-radius: 16px; padding: 28px 24px; text-align: center; margin-top: 40px;
+  /* ---- Sections: a level tile beside the heading words; a calm column of text ---- */
+  .levels > section + section { margin-top: 88px; }
+  section, #contents { scroll-margin-top: 32px; }
+  .opener { position: relative; min-height: var(--tile); margin: 0 0 18px;
+    padding-left: calc(var(--tile) + 18px); padding-top: calc((var(--tile) - 1.12em) / 2);
+    color: var(--bb-ink); font: 800 var(--fs-h2)/1.12 var(--font-display); letter-spacing: -0.015em; }
+  /* .lv stays a plain block (absolute): never flex or grid, so the heading reads "6. Data Sharing". */
+  .lv { position: absolute; left: 0; top: 0; width: var(--tile); height: var(--tile); line-height: calc(var(--tile) - 2px);
+    text-align: center; border: 1px solid transparent; border-radius: var(--r-tile); background: var(--bb-tile); color: #fff;
+    font-size: 26px; letter-spacing: 0; font-variant-numeric: tabular-nums; box-shadow: var(--sh-tile); }
+  .lv .dot { color: var(--bb-pink-lt); }
+  section > p { margin-bottom: 16px; }
+  section > ul { margin-bottom: 18px; padding-left: 1.3em; }
+  section li { margin-bottom: 10px; padding-left: 4px; line-height: 1.65; }
+  section li::marker { color: var(--bb-tile); }
+  section > :last-child { margin-bottom: 0; }
+  /* Inline padding grows each text link's tap area to 24px+ without moving a single line. */
+  section a { padding-block: 2px; }
+  @media (max-width: 599px) {
+    .levels > section + section { margin-top: 64px; }
+    section, #contents { scroll-margin-top: 24px; }
+    .opener { margin-bottom: 14px; padding-left: calc(var(--tile) + 12px); }
+    .lv { font-size: 21px; }
+    section > p { margin-bottom: 14px; }
   }
-  .contact h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
-  .contact a { color: var(--purple); font-weight: 600; text-decoration: none; }
-  .contact a:hover { text-decoration: underline; }
 
-  /* Footer */
-  footer {
-    background: #fff; border-top: 1px solid var(--border);
-    padding: 24px; text-align: center;
-    font-size: 13px; color: var(--muted);
+  /* ---- The data inventory (section 2): a real table, stacked into cards on phones ---- */
+  .inv { width: 100%; margin: 20px 0 24px; border-collapse: separate; border-spacing: 0; overflow: hidden;
+    background: var(--bb-card); border-radius: var(--r-2); box-shadow: var(--sh-1); font-size: 16px; line-height: 1.5; }
+  .inv th, .inv td { padding: 14px 18px; text-align: left; vertical-align: top; }
+  .inv thead th { background: var(--bb-violet); color: #fff; font: 700 14px/1.3 var(--font-body); }
+  .inv thead th:nth-child(1) { width: 31%; }   /* "Usage Analytics" fits on one line from 1100px up */
+  .inv thead th:nth-child(2) { width: 39%; }
+  .inv tbody th, .inv td { border-top: 1px solid var(--bb-rule); color: var(--bb-ink); font-variant-numeric: tabular-nums; }
+  .inv tbody tr:first-child > * { border-top: 0; }
+  .inv tbody th { font: 800 17px/1.25 var(--font-display); letter-spacing: -0.005em; }
+  .inv tbody th strong { font: inherit; }
+  @media (max-width: 599px) {
+    .inv, .inv thead, .inv tbody, .inv tr, .inv th, .inv td { display: block; }
+    .inv { overflow: visible; margin: 18px 0 22px; background: none; border-radius: 0; box-shadow: none; }
+    .inv thead tr { display: flex; flex-wrap: wrap; gap: 8px 14px; padding: 12px 14px; border-radius: 14px; background: var(--bb-tint); }
+    .inv thead th, .inv thead th:nth-child(n) { display: flex; align-items: center; gap: 7px; width: auto; padding: 0;
+      background: none; color: var(--bb-ink-2); font: 700 13.5px/1.3 var(--font-body); }
+    .inv thead th::before, .inv tbody th::before, .inv td::before { content: ""; flex: none; }
+    .inv thead th:nth-child(1)::before, .inv tbody th::before { width: 12px; height: 12px; border-radius: 30%; background: var(--bb-tile); }
+    .inv thead th:nth-child(2)::before, .inv td:nth-of-type(1)::before { width: 8px; height: 8px; background: var(--bb-violet); }
+    .inv thead th:nth-child(3)::before, .inv td:nth-of-type(2)::before { width: 12px; height: 12px; background: var(--bb-pink-deep);
+      -webkit-mask: var(--ext) no-repeat center / contain; mask: var(--ext) no-repeat center / contain; transform: rotate(45deg); }
+    .inv tbody tr { margin-top: 10px; padding: 16px; border-radius: var(--r-2); background: var(--bb-card); box-shadow: var(--sh-1); }
+    .inv tbody th, .inv td { position: relative; border-top: 0; }
+    .inv tbody th { padding: 0 0 0 20px; font-size: 18px; }
+    .inv tbody th::before { position: absolute; left: 0; top: .36em; }
+    .inv td { margin-top: 8px; padding: 0 0 0 18px; }
+    .inv td::before { position: absolute; left: 0; top: .5em; }
+    .inv td:nth-of-type(2)::before { left: -2px; top: .42em; }
   }
 
-  @media (max-width: 600px) {
-    header h1 { font-size: 24px; }
-    .container { padding: 32px 16px 60px; }
-    h2 { font-size: 18px; }
+  /* ---- Contact panel: the end of the path ---- */
+  .contact { position: relative; margin-top: 96px; padding: 68px 40px 44px; border-radius: var(--r-4);
+    background: var(--bb-violet); color: var(--bb-lilac); text-align: center; scroll-margin-top: 76px; }
+  .contact h3 { margin-bottom: 10px; color: #fff; font: 800 var(--fs-h3)/1.1 var(--font-display); letter-spacing: -0.02em; }
+  .c-lead { font-size: 17px; line-height: 1.5; }
+  .c-mail { margin-top: 18px; }
+  .c-note { margin-top: 14px; font-size: 15px; line-height: 1.5; }
+  .pill { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 22px; border-radius: var(--r-pill);
+    background: var(--bb-gold); color: var(--bb-ink); font: 800 18px/1 var(--font-display); text-decoration: none; box-shadow: var(--sh-pill);
+    transition: transform var(--dur-1) var(--ease-out), box-shadow var(--dur-1) var(--ease-out), background-color var(--dur-1) var(--ease-out); }
+  .pill .i { flex: none; width: 20px; height: 20px; }
+  .pill:hover { background: #FFD466; transform: translateY(-1px); box-shadow: 0 14px 28px -10px rgba(10,3,30,.7); }
+  .contact .pill:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+  /* The small end tile on the panel's top edge (static pose; the kit's data-reveal-3d raises it in). */
+  .end-tile { --tsz: 88px; position: absolute; top: calc(var(--tsz) / -2); left: 50%; margin-left: calc(var(--tsz) / -2);
+    width: var(--tsz); height: var(--tsz); perspective: 500px; }
+  .end-tile .tile { position: absolute; inset: 0; border-radius: var(--r-tile); transform-style: preserve-3d; }
+  .end-tile .tile-turn { transform: rotateX(14deg) rotateY(-20deg) rotateZ(-4deg); }
+  @media (max-width: 719px) {
+    .end-tile { --tsz: 72px; }
+    .contact { padding: 56px 22px 32px; scroll-margin-top: 60px; }
+  }
+  @media (max-width: 599px) {
+    .contact { margin-top: 72px; }
+    .pill { gap: 8px; padding: 0 16px; font-size: 16px; }
+    .pill .i { width: 16px; height: 16px; }
+  }
+  @media (max-width: 360px) { .pill { font-size: 15px; } }
+  @media (max-width: 340px) {
+    .contact { padding-left: 18px; padding-right: 18px; }
+    .pill { padding: 0 12px; }
+    .pill .i { display: none; }
+    .meta { padding-left: 16px; padding-right: 16px; }
+  }
+
+  /* ---- Phone level path (under 600px): a track with a node per section, centred on the lane at vw - 21 ---- */
+  @media (max-width: 599px) {
+    .levels { position: relative; }
+    .levels::before, .levels::after { content: ""; position: absolute; right: -30px; top: 22px; width: 2px; border-radius: 2px; }
+    .levels::before { bottom: -104px; background: var(--bb-rule); }
+    .levels::after { height: var(--fill, 0px); background: var(--bb-tile); transition: height var(--dur-2) var(--ease-out); }
+    .levels .opener::after { content: ""; position: absolute; z-index: 1; right: -35px; top: 16px; width: 12px; height: 12px;
+      border-radius: 4px; border: 1.5px solid var(--bb-node-line); background: var(--bb-tint);
+      transition: background-color var(--dur-1) var(--ease-out), box-shadow var(--dur-1) var(--ease-out), border-color var(--dur-1) var(--ease-out); }
+    .levels section.is-current > .opener::after { background: var(--bb-tile); border-color: var(--bb-tile);
+      box-shadow: 0 0 0 2px var(--bb-paper), 0 0 0 4px var(--bb-pink-deep); }
+    .levels section.is-passed > .opener::after { background: var(--bb-gold); border-color: var(--bb-ink-2); }
+    .contact::before { content: ""; position: absolute; z-index: 1; right: -37px; top: 24px; width: 16px; height: 16px;
+      border-radius: 5px; border: 1.5px solid var(--bb-node-line); background: var(--bb-tint);
+      transition: background-color var(--dur-1) var(--ease-out), border-color var(--dur-1) var(--ease-out); }
+    .contact.is-done::before { background: var(--bb-gold); border-color: var(--bb-ink-2); }
+  }
+
+  /* ---- Footer ---- */
+  .foot { margin-top: 96px; padding: 40px var(--gr) 120px var(--gl); background: var(--bb-night); color: #fff;
+    text-align: center; font: 400 14.5px/1.6 var(--font-body); }
+  .foot a { color: var(--bb-gold-lt); text-decoration-color: color-mix(in srgb, var(--bb-gold-lt) 60%, transparent); }
+  .foot a:hover { text-decoration-color: var(--bb-gold-lt); }
+  .foot .foot-2 { margin-top: 4px; color: var(--bb-lilac); }
+  @media (min-width: 1100px) { .foot { padding: 40px 24px 48px; } }
+  @media (max-width: 599px) {
+    .foot { margin-top: 72px; }
+    .foot a { display: inline-block; padding: 10px 0; }
+  }
+
+  /* ---- Small chrome: skip link, back to contents, the kit's pause button ---- */
+  .skip { position: absolute; left: 12px; top: 12px; z-index: 100; padding: 10px 14px; border-radius: var(--r-1);
+    background: var(--bb-night); color: var(--bb-gold); font: 700 15px/1.2 var(--font-body); text-decoration: none;
+    white-space: nowrap; clip-path: inset(50%); }
+  .skip:focus { position: fixed; clip-path: none; }
+  .skip:focus-visible { outline: 3px solid var(--bb-gold); outline-offset: 2px; }
+  .to-contents { position: fixed; z-index: 61; right: calc(8px + env(safe-area-inset-right, 0px)); bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+    display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid rgba(255,200,61,.45); background: var(--bb-night); color: var(--bb-gold); box-shadow: var(--sh-btn);
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 120ms var(--ease-out), transform 120ms var(--ease-out), visibility 0s linear 120ms; }
+  .to-contents svg { width: 20px; height: 20px; }
+  .to-contents.is-shown { opacity: 1; visibility: visible; transform: none;
+    transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out), visibility 0s; }
+  html.motion-off .to-contents { transform: none; }
+  @media (min-width: 720px) { .to-contents { right: 16px; } }
+  @media (min-width: 1100px) { .to-contents { display: none; } }
+  @media (max-width: 719px) { html .ll-toggle.ll-bottom-right { right: calc(8px + env(safe-area-inset-right, 0px)); } }
+  /* Two-tone ring: gold inside a night halo, visible on paper, violet and night alike. */
+  html .ll-toggle:focus-visible, .to-contents:focus-visible { outline: 3px solid var(--bb-gold); outline-offset: 2px;
+    box-shadow: 0 0 0 7px var(--bb-night), var(--sh-btn); }
+
+  /* ---- Motion: the specks twinkle only with a pause button, only while on screen ---- */
+  @keyframes bb-twinkle {
+    0%, 100% { opacity: var(--op); transform: scale(1); }
+    50% { opacity: calc(var(--op) * .35); transform: scale(.82); }
+  }
+  html.can-pause:not(.motion-off) .is-live .speck { animation: bb-twinkle var(--d, 5s) ease-in-out var(--dl, 0s) infinite; }
+
+  /* ---- Print: the policy on white, no art ---- */
+  @media print {
+    @page { margin: 16mm 14mm; }
+    html, body { background: #fff; color: #000; }
+    body { font-size: 11pt; }
+    .logo, .specks, .end-tile, .glow, .to-contents, .skip, .sprite { display: none !important; }
+    .levels::before, .levels::after, .levels .opener::after, .contact::before, .toc ol::before, .toc ol::after { display: none !important; }
+    .mast { padding: 0 0 12pt; background: none; color: #000; }
+    .mast-in { display: block; max-width: none; }
+    .mast h1, .mast .sub { color: #000; }
+    main, .foot { padding-left: 0; padding-right: 0; }
+    .meta { margin-top: 0; max-width: none; }
+    .meta, .highlight, .inv, .contact, .toc { background: none !important; box-shadow: none !important; border: 1px solid #999; }
+    .policy-grid { display: block; max-width: none; margin-top: 16pt; }
+    .toc { position: static; max-height: none; overflow: visible; margin: 16pt 0 0; padding: 10pt 12pt; }
+    .policy-body { margin-top: 20pt; }
+    .levels > section + section { margin-top: 20pt; }
+    .lv { background: none; color: #000; border: 1.5px solid #000; box-shadow: none; }
+    .lv .dot { color: #000; }
+    .inv thead th { background: none; color: #000; border-bottom: 1px solid #000; }
+    .contact { margin-top: 24pt; padding: 12pt; color: #000; }
+    .contact h3, .contact p { color: #000; }
+    .pill { background: none; box-shadow: none; border: 1px solid #000; color: #000; }
+    .pill .i { display: none; }
+    .foot { margin-top: 20pt; padding-top: 10pt; padding-bottom: 0; background: none; color: #000; }
+    .foot a, .foot .foot-2 { color: #000; }
+    a { color: #000; }
+    a[href^="http"]::after { content: " (" attr(href) ")"; display: inline; width: auto; height: auto; margin: 0;
+      background: none; -webkit-mask: none; mask: none; }
+    h2, h3 { break-after: avoid; }
+    tr { break-inside: avoid; }
+  }
+
+  /* ---- Forced colours: the system palette, no art ---- */
+  @media (forced-colors: active) {
+    .logo, .specks, .end-tile { display: none; }
+    .levels::before, .levels::after, .levels .opener::after, .contact::before, .toc ol::before, .toc ol::after { display: none; }
+    .lv, .node { border: 1px solid CanvasText; }
+    .toc a[aria-current="location"] .node { outline: 2px solid Highlight; outline-offset: 2px; }
+    .pill { border: 1px solid LinkText; }
+    a { text-decoration: underline; }
+    a[target="_blank"]::after { forced-color-adjust: none; background: LinkText; }
   }
 </style>
 </head>
 <body>
+<a class="skip" href="#policy">Skip to the policy</a>
 
-<header>
-  <div class="logo">🧠</div>
-  <h1>Privacy Policy</h1>
-  <p>Brain Boost Quiz App</p>
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+ <defs>
+  <linearGradient id="bb-gold" x1="0" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#FFE39A"/><stop offset=".45" stop-color="#FFC83D"/><stop offset="1" stop-color="#B07A12"/>
+  </linearGradient>
+  <symbol id="bb-brain" viewBox="0 0 24 24">
+   <path id="bb-hemi" d="M11.25 4.3C9.9 3.2 7.5 3.2 6.6 4.9 4.7 5 3.5 6.8 4.1 8.6 2.6 9.6 2.5 12 3.9 13.2 3.3 15 4.6 16.9 6.6 17 7.4 18.6 9.6 19.3 11.25 18.2Z"/>
+   <use href="#bb-hemi" transform="translate(24 0) scale(-1 1)"/>
+   <path d="M10.9 18.4h2.2v1.9a1.1 1.1 0 0 1-2.2 0Z"/>
+  </symbol>
+  <symbol id="bb-folds" viewBox="0 0 24 24" fill="none" stroke-linecap="round">
+   <path d="M6.3 8.3c1.4-.5 2.7.3 3.1 1.6M5.6 12.6c1.5-.4 3 .4 3.3 1.9M7.6 5.9c.6.6.8 1.4.6 2.2M17.7 8.3c-1.4-.5-2.7.3-3.1 1.6M18.4 12.6c-1.5-.4-3 .4-3.3 1.9M16.4 5.9c-.6.6-.8 1.4-.6 2.2"/>
+  </symbol>
+  <symbol id="bb-spark" viewBox="0 0 24 24"><path d="M12 1.5l2.2 8.3 8.3 2.2-8.3 2.2L12 22.5l-2.2-8.3L1.5 12l8.3-2.2z"/></symbol>
+  <symbol id="bb-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="6" width="17" height="12" rx="2.5"/><path d="M4.5 7.5l7.5 6 7.5-6"/></symbol>
+  <symbol id="bb-list-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h9M4 12h9M4 17h9M17 16V7m-3 3l3-3 3 3"/></symbol>
+ </defs>
+</svg>
+
+<header class="mast">
+  <div class="mast-in">
+    <div class="logo" aria-hidden="true">
+      <span class="glow"></span>
+      <div class="specks far" data-depth="0.12">
+        <i class="speck dot" style="--x:22%;--y:3%;--s:3px;--o:.55;--px:60%;--py:8%;--ps:3px;--po:.55"></i>
+        <svg class="speck dk" viewBox="0 0 24 24" style="--x:70%;--y:98%;--s:8px;--o:.5"><use href="#bb-spark"/></svg>
+        <i class="speck dot dk" style="--x:101%;--y:86%;--s:4px;--o:.5"></i>
+        <svg class="speck" viewBox="0 0 24 24" style="--x:-2%;--y:34%;--s:7px;--o:.6;--px:84%;--py:90%;--ps:7px;--po:.5"><use href="#bb-spark"/></svg>
+        <i class="speck dot" style="--x:60%;--y:-2%;--s:3px;--o:.45;--px:98%;--py:56%;--ps:3px;--po:.5"></i>
+        <i class="speck dot dk" style="--x:36%;--y:99%;--s:3px;--o:.5"></i>
+      </div>
+      <span class="tile-shadow" data-depth="-0.05"></span>
+      <div class="tile" data-tilt data-tilt-max="12">
+        <div class="tile-turn">
+          <i class="rim" style="--i:7;--c:#B07A12"></i><i class="rim" style="--i:6;--c:#B88016"></i><i class="rim" style="--i:5;--c:#C0861B"></i>
+          <i class="rim" style="--i:4;--c:#C98E20"></i><i class="rim" style="--i:3;--c:#D19724"></i><i class="rim" style="--i:2;--c:#D9A027"></i>
+          <i class="rim" style="--i:1;--c:#E0A92A"></i>
+          <i class="face"></i>
+          <svg class="enamel" viewBox="0 0 24 24"><use href="#bb-brain" fill="#FF5FAE"/></svg>
+          <svg class="metal" viewBox="0 0 24 24"><use href="#bb-brain" fill="none" stroke="url(#bb-gold)" stroke-width=".9" stroke-linejoin="round"/><use href="#bb-folds" stroke="url(#bb-gold)" stroke-width=".9"/></svg>
+          <svg class="spark" viewBox="0 0 24 24"><use href="#bb-spark" fill="#FFC83D"/></svg>
+        </div>
+      </div>
+      <div class="specks near" data-depth="0.3">
+        <svg class="speck" viewBox="0 0 24 24" style="--x:8%;--y:12%;--s:18px;--o:1;--px:66%;--py:18%;--ps:14px;--po:1"><use href="#bb-spark"/></svg>
+        <svg class="speck" viewBox="0 0 24 24" style="--x:90%;--y:6%;--s:12px;--o:.9;--px:92%;--py:30%;--ps:10px;--po:.9"><use href="#bb-spark"/></svg>
+        <i class="speck dot" style="--x:97%;--y:30%;--s:6px;--o:.9;--px:78%;--py:46%;--ps:5px;--po:.9"></i>
+        <svg class="speck" viewBox="0 0 24 24" style="--x:99%;--y:64%;--s:14px;--o:1;--px:70%;--py:78%;--ps:8px;--po:.85"><use href="#bb-spark"/></svg>
+        <i class="speck dot" style="--x:84%;--y:95%;--s:5px;--o:.8;--px:88%;--py:70%;--ps:4px;--po:.8"></i>
+        <svg class="speck dk" viewBox="0 0 24 24" style="--x:14%;--y:92%;--s:10px;--o:.85"><use href="#bb-spark"/></svg>
+        <i class="speck dot dk" style="--x:2%;--y:70%;--s:4px;--o:.8"></i>
+        <svg class="speck dk" viewBox="0 0 24 24" style="--x:50%;--y:1%;--s:9px;--o:.8"><use href="#bb-spark"/></svg>
+      </div>
+    </div>
+    <h1 data-perch>Privacy Policy</h1>
+    <p class="sub">Brain Boost Quiz App</p>
+  </div>
 </header>
 
-<div class="container">
+<main id="policy" tabindex="-1">
 
-  <!-- Meta bar -->
   <div class="meta">
-    <div><strong>App Name:</strong> Brain Boost Quiz App</div>
-    <div><strong>Effective Date:</strong> April 5, 2026</div>
-    <div><strong>Last Updated:</strong> April 5, 2026</div>
-    <div><strong>Contact:</strong> support@brainboost.app</div>
+    <div><strong>App Name:</strong> <span class="v">Brain Boost Quiz App</span></div>
+    <div><strong>Effective Date:</strong> <span class="v">April 5, 2026</span></div>
+    <div><strong>Last Updated:</strong> <span class="v">April 5, 2026</span></div>
+    <div><strong>Contact:</strong> <span class="v"><a href="mailto:support@brainboost.app">support@brainboost.app</a></span></div>
   </div>
 
-  <div class="highlight">
-    We take your privacy seriously. This policy explains exactly what data we collect, why we collect it, and how you can control it. We will never sell your personal data.
+  <div class="policy-grid">
+
+    <div class="highlight">
+      We take your privacy seriously. This policy explains exactly what data we collect, why we collect it, and how you can control it. We will never sell your personal data.
+    </div>
+
+    <nav class="toc" aria-labelledby="contents">
+      <h2 id="contents" tabindex="-1">Contents</h2>
+      <ol role="list">
+        <li><a href="#s1"><span class="node">1</span> <span class="label">Who We Are</span></a></li>
+        <li><a href="#s2"><span class="node">2</span> <span class="label">Information We Collect</span></a></li>
+        <li><a href="#s3"><span class="node">3</span> <span class="label">Advertising (Free Users)</span></a></li>
+        <li><a href="#s4"><span class="node">4</span> <span class="label">In-App Purchases &amp; Subscriptions</span></a></li>
+        <li><a href="#s5"><span class="node">5</span> <span class="label">How We Use Your Information</span></a></li>
+        <li><a href="#s6"><span class="node">6</span> <span class="label">Data Sharing</span></a></li>
+        <li><a href="#s7"><span class="node">7</span> <span class="label">Data Retention</span></a></li>
+        <li><a href="#s8"><span class="node">8</span> <span class="label">Your Rights</span></a></li>
+        <li><a href="#s9"><span class="node">9</span> <span class="label">Children's Privacy</span></a></li>
+        <li><a href="#s10"><span class="node">10</span> <span class="label">Security</span></a></li>
+        <li><a href="#s11"><span class="node">11</span> <span class="label">Changes to This Policy</span></a></li>
+        <li class="end"><a href="#contact"><span class="node node--end"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#bb-brain"/><use href="#bb-folds"/></svg></span> <span class="label">Questions or Requests?</span></a></li>
+      </ol>
+    </nav>
+
+    <div class="policy-body">
+      <div class="levels">
+
+        <!-- 1. Who we are -->
+        <section id="s1">
+          <h2 class="opener"><span class="lv">1<span class="dot">.</span></span> <span class="ht" data-perch>Who We Are</span></h2>
+          <p>Brain Boost Quiz App ("we," "us," or "our") is operated as an independent mobile application available on the Google Play Store. We are committed to protecting your personal information and your right to privacy.</p>
+          <p>If you have any questions or concerns about this policy or our practices, contact us at <strong><a href="mailto:support@brainboost.app">support@brainboost.app</a></strong>.</p>
+        </section>
+
+        <!-- 2. Information We Collect -->
+        <section id="s2">
+          <h2 class="opener"><span class="lv">2<span class="dot">.</span></span> <span class="ht" data-perch>Information We Collect</span></h2>
+          <p>We collect different types of information depending on how you use the app.</p>
+
+          <table class="inv" role="table">
+            <thead role="rowgroup">
+              <tr role="row"><th scope="col" role="columnheader">Data Type</th><th scope="col" role="columnheader">What We Collect</th><th scope="col" role="columnheader">Why</th></tr>
+            </thead>
+            <tbody role="rowgroup">
+              <tr role="row">
+                <th scope="row" role="rowheader"><strong>Account Data</strong></th>
+                <td role="cell">Email address, display name (if you create an account)</td>
+                <td role="cell">To save your progress and sync across devices</td>
+              </tr>
+              <tr role="row">
+                <th scope="row" role="rowheader"><strong>Game Progress</strong></th>
+                <td role="cell">XP points, level completions, quiz scores, streaks</td>
+                <td role="cell">To provide the core app experience</td>
+              </tr>
+              <tr role="row">
+                <th scope="row" role="rowheader"><strong>Purchase Data</strong></th>
+                <td role="cell">Subscription status (Pro / Free). We do NOT store card details.</td>
+                <td role="cell">To unlock premium features</td>
+              </tr>
+              <tr role="row">
+                <th scope="row" role="rowheader"><strong>Device Data</strong></th>
+                <td role="cell">Device type, OS version, app version, crash logs</td>
+                <td role="cell">To diagnose bugs and improve performance</td>
+              </tr>
+              <tr role="row">
+                <th scope="row" role="rowheader"><strong>Ad Data</strong></th>
+                <td role="cell">Advertising ID (free users only), ad interaction data</td>
+                <td role="cell">To serve relevant advertisements</td>
+              </tr>
+              <tr role="row">
+                <th scope="row" role="rowheader"><strong>Usage Analytics</strong></th>
+                <td role="cell">Screen views, feature usage (anonymised)</td>
+                <td role="cell">To understand how the app is used and improve it</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>We do <strong>not</strong> collect: precise location, contacts, microphone, camera, or any sensitive personal data.</p>
+        </section>
+
+        <!-- 3. Advertising -->
+        <section id="s3">
+          <h2 class="opener"><span class="lv">3<span class="dot">.</span></span> <span class="ht" data-perch>Advertising (Free Users)</span></h2>
+          <p>Brain Boost is free to play with optional advertisements. Free users will see banner ads and interstitial ads between quiz rounds. These ads are served by third-party advertising networks including Google AdMob.</p>
+          <ul>
+            <li>Ad networks may use your Advertising ID to serve relevant ads.</li>
+            <li>You can reset your Advertising ID at any time in your device settings.</li>
+            <li>You can opt out of personalised ads in your Google account settings.</li>
+            <li><strong>Pro subscribers see zero ads.</strong> Upgrading to Pro immediately removes all advertising.</li>
+          </ul>
+          <p>Our advertising partners comply with applicable privacy laws. For more information, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+        </section>
+
+        <!-- 4. In-App Purchases -->
+        <section id="s4">
+          <h2 class="opener"><span class="lv">4<span class="dot">.</span></span> <span class="ht" data-perch>In-App Purchases &amp; Subscriptions</span></h2>
+          <p>Brain Boost offers a Pro subscription ($4.99/month) processed entirely through the Google Play billing system.</p>
+          <ul>
+            <li>We never see or store your payment card details — these are handled securely by Google.</li>
+            <li>We receive only your subscription status (active/inactive) from Google.</li>
+            <li>Subscriptions auto-renew monthly unless cancelled at least 24 hours before the renewal date.</li>
+            <li>You can manage or cancel your subscription at any time through the Google Play Store app.</li>
+          </ul>
+        </section>
+
+        <!-- 5. How We Use Your Information -->
+        <section id="s5">
+          <h2 class="opener"><span class="lv">5<span class="dot">.</span></span> <span class="ht" data-perch>How We Use Your Information</span></h2>
+          <p>We use the information we collect to:</p>
+          <ul>
+            <li>Provide, operate, and maintain the app</li>
+            <li>Save and sync your game progress across sessions</li>
+            <li>Process subscription purchases and unlock premium features</li>
+            <li>Show advertisements to free users</li>
+            <li>Analyse usage patterns to improve the app (anonymised data only)</li>
+            <li>Send important service updates (e.g. billing issues, app updates)</li>
+            <li>Diagnose and fix bugs and crashes</li>
+          </ul>
+          <p>We do <strong>not</strong> use your data for: selling to third parties, building profiles for non-advertising purposes, or any automated decision-making that significantly affects you.</p>
+        </section>
+
+        <!-- 6. Data Sharing -->
+        <section id="s6">
+          <h2 class="opener"><span class="lv">6<span class="dot">.</span></span> <span class="ht" data-perch>Data Sharing</span></h2>
+          <p>We share data only in these limited circumstances:</p>
+          <ul>
+            <li><strong>Service providers:</strong> We use trusted third-party services (e.g. Firebase for analytics, AdMob for ads, RevenueCat for subscriptions) that process data on our behalf under strict data processing agreements.</li>
+            <li><strong>Legal requirements:</strong> We may disclose data if required by law or to protect the rights and safety of users.</li>
+            <li><strong>Business transfer:</strong> If the app is acquired or merged, your data may transfer to the new owner subject to the same privacy protections.</li>
+          </ul>
+          <p>We <strong>never</strong> sell your personal data to third parties.</p>
+        </section>
+
+        <!-- 7. Data Retention -->
+        <section id="s7">
+          <h2 class="opener"><span class="lv">7<span class="dot">.</span></span> <span class="ht" data-perch>Data Retention</span></h2>
+          <p>We retain your data for as long as your account is active or as needed to provide the service. If you delete your account, we will delete your personal data within 30 days, except where retention is required by law.</p>
+          <p>Anonymised, aggregated analytics data (which cannot identify you) may be retained indefinitely for product improvement purposes.</p>
+        </section>
+
+        <!-- 8. Your Rights -->
+        <section id="s8">
+          <h2 class="opener"><span class="lv">8<span class="dot">.</span></span> <span class="ht" data-perch>Your Rights</span></h2>
+          <p>Depending on your location, you may have the following rights:</p>
+          <ul>
+            <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+            <li><strong>Correction:</strong> Request correction of inaccurate data.</li>
+            <li><strong>Deletion:</strong> Request deletion of your account and personal data.</li>
+            <li><strong>Portability:</strong> Request your data in a portable format.</li>
+            <li><strong>Opt-out of ads:</strong> Opt out of personalised advertising via your device settings.</li>
+          </ul>
+          <p>To exercise any of these rights, email us at <strong><a href="mailto:support@brainboost.app">support@brainboost.app</a></strong> and we will respond within 30 days.</p>
+        </section>
+
+        <!-- 9. Children's Privacy -->
+        <section id="s9">
+          <h2 class="opener"><span class="lv">9<span class="dot">.</span></span> <span class="ht" data-perch>Children's Privacy</span></h2>
+          <p>Brain Boost Quiz App is rated "Everyone" on Google Play and is suitable for all ages. However, the app is not specifically directed at children under 13, and we do not knowingly collect personal data from children under 13 without parental consent.</p>
+          <p>If you believe we have inadvertently collected data from a child under 13, please contact us immediately at <strong><a href="mailto:support@brainboost.app">support@brainboost.app</a></strong> and we will delete the data promptly.</p>
+        </section>
+
+        <!-- 10. Security -->
+        <section id="s10">
+          <h2 class="opener"><span class="lv">10<span class="dot">.</span></span> <span class="ht" data-perch>Security</span></h2>
+          <p>We implement industry-standard security measures including encryption in transit (HTTPS/TLS), secure cloud infrastructure, and access controls. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+        </section>
+
+        <!-- 11. Changes -->
+        <section id="s11">
+          <h2 class="opener"><span class="lv">11<span class="dot">.</span></span> <span class="ht" data-perch>Changes to This Policy</span></h2>
+          <p>We may update this Privacy Policy from time to time. When we make significant changes, we will notify you through the app or by email. The "Last Updated" date at the top of this page will always reflect the most recent version.</p>
+          <p>Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+        </section>
+
+      </div>
+
+      <!-- Contact: the end of the path -->
+      <div class="contact" id="contact">
+        <div class="end-tile" data-reveal-3d aria-hidden="true">
+          <div class="specks">
+            <svg class="speck" viewBox="0 0 24 24" style="--x:-30%;--y:64%;--s:12px;--o:.95"><use href="#bb-spark"/></svg>
+            <i class="speck dot" style="--x:-19%;--y:88%;--s:5px;--o:.8"></i>
+            <svg class="speck" viewBox="0 0 24 24" style="--x:131%;--y:72%;--s:10px;--o:.9"><use href="#bb-spark"/></svg>
+            <i class="speck dot" style="--x:121%;--y:57%;--s:4px;--o:.75"></i>
+          </div>
+          <div class="tile">
+            <div class="tile-turn">
+              <i class="rim" style="--i:5;--c:#C0861B"></i><i class="rim" style="--i:4;--c:#C98E20"></i><i class="rim" style="--i:3;--c:#D19724"></i>
+              <i class="rim" style="--i:2;--c:#D9A027"></i><i class="rim" style="--i:1;--c:#E0A92A"></i>
+              <i class="face"></i>
+              <svg class="enamel" viewBox="0 0 24 24"><use href="#bb-brain" fill="#FF5FAE"/></svg>
+              <svg class="metal" viewBox="0 0 24 24"><use href="#bb-brain" fill="none" stroke="url(#bb-gold)" stroke-width=".9" stroke-linejoin="round"/><use href="#bb-folds" stroke="url(#bb-gold)" stroke-width=".9"/></svg>
+              <svg class="spark" viewBox="0 0 24 24"><use href="#bb-spark" fill="#FFC83D"/></svg>
+            </div>
+          </div>
+        </div>
+        <h3 data-perch>Questions or Requests?</h3>
+        <p class="c-lead">We're happy to help with any privacy-related questions.</p>
+        <p class="c-mail"><a class="pill" href="mailto:support@brainboost.app" data-magnetic><svg class="i" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#bb-mail"/></svg>support@brainboost.app</a></p>
+        <p class="c-note">We aim to respond within 2 business days.</p>
+      </div>
+    </div>
+
   </div>
+</main>
 
-  <!-- 1. Who we are -->
-  <section>
-    <h2><span class="icon">🏢</span> 1. Who We Are</h2>
-    <p>Brain Boost Quiz App ("we," "us," or "our") is operated as an independent mobile application available on the Google Play Store. We are committed to protecting your personal information and your right to privacy.</p>
-    <p>If you have any questions or concerns about this policy or our practices, contact us at <strong>support@brainboost.app</strong>.</p>
-  </section>
-
-  <!-- 2. Information We Collect -->
-  <section>
-    <h2><span class="icon">📋</span> 2. Information We Collect</h2>
-    <p>We collect different types of information depending on how you use the app.</p>
-
-    <table>
-      <thead>
-        <tr><th>Data Type</th><th>What We Collect</th><th>Why</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Account Data</strong></td>
-          <td>Email address, display name (if you create an account)</td>
-          <td>To save your progress and sync across devices</td>
-        </tr>
-        <tr>
-          <td><strong>Game Progress</strong></td>
-          <td>XP points, level completions, quiz scores, streaks</td>
-          <td>To provide the core app experience</td>
-        </tr>
-        <tr>
-          <td><strong>Purchase Data</strong></td>
-          <td>Subscription status (Pro / Free). We do NOT store card details.</td>
-          <td>To unlock premium features</td>
-        </tr>
-        <tr>
-          <td><strong>Device Data</strong></td>
-          <td>Device type, OS version, app version, crash logs</td>
-          <td>To diagnose bugs and improve performance</td>
-        </tr>
-        <tr>
-          <td><strong>Ad Data</strong></td>
-          <td>Advertising ID (free users only), ad interaction data</td>
-          <td>To serve relevant advertisements</td>
-        </tr>
-        <tr>
-          <td><strong>Usage Analytics</strong></td>
-          <td>Screen views, feature usage (anonymised)</td>
-          <td>To understand how the app is used and improve it</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p>We do <strong>not</strong> collect: precise location, contacts, microphone, camera, or any sensitive personal data.</p>
-  </section>
-
-  <!-- 3. Advertising -->
-  <section>
-    <h2><span class="icon">📢</span> 3. Advertising (Free Users)</h2>
-    <p>Brain Boost is free to play with optional advertisements. Free users will see banner ads and interstitial ads between quiz rounds. These ads are served by third-party advertising networks including Google AdMob.</p>
-    <ul>
-      <li>Ad networks may use your Advertising ID to serve relevant ads.</li>
-      <li>You can reset your Advertising ID at any time in your device settings.</li>
-      <li>You can opt out of personalised ads in your Google account settings.</li>
-      <li><strong>Pro subscribers see zero ads.</strong> Upgrading to Pro immediately removes all advertising.</li>
-    </ul>
-    <p>Our advertising partners comply with applicable privacy laws. For more information, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
-  </section>
-
-  <!-- 4. In-App Purchases -->
-  <section>
-    <h2><span class="icon">💳</span> 4. In-App Purchases &amp; Subscriptions</h2>
-    <p>Brain Boost offers a Pro subscription ($4.99/month) processed entirely through the Google Play billing system.</p>
-    <ul>
-      <li>We never see or store your payment card details — these are handled securely by Google.</li>
-      <li>We receive only your subscription status (active/inactive) from Google.</li>
-      <li>Subscriptions auto-renew monthly unless cancelled at least 24 hours before the renewal date.</li>
-      <li>You can manage or cancel your subscription at any time through the Google Play Store app.</li>
-    </ul>
-  </section>
-
-  <!-- 5. How We Use Your Information -->
-  <section>
-    <h2><span class="icon">⚙️</span> 5. How We Use Your Information</h2>
-    <p>We use the information we collect to:</p>
-    <ul>
-      <li>Provide, operate, and maintain the app</li>
-      <li>Save and sync your game progress across sessions</li>
-      <li>Process subscription purchases and unlock premium features</li>
-      <li>Show advertisements to free users</li>
-      <li>Analyse usage patterns to improve the app (anonymised data only)</li>
-      <li>Send important service updates (e.g. billing issues, app updates)</li>
-      <li>Diagnose and fix bugs and crashes</li>
-    </ul>
-    <p>We do <strong>not</strong> use your data for: selling to third parties, building profiles for non-advertising purposes, or any automated decision-making that significantly affects you.</p>
-  </section>
-
-  <!-- 6. Data Sharing -->
-  <section>
-    <h2><span class="icon">🤝</span> 6. Data Sharing</h2>
-    <p>We share data only in these limited circumstances:</p>
-    <ul>
-      <li><strong>Service providers:</strong> We use trusted third-party services (e.g. Firebase for analytics, AdMob for ads, RevenueCat for subscriptions) that process data on our behalf under strict data processing agreements.</li>
-      <li><strong>Legal requirements:</strong> We may disclose data if required by law or to protect the rights and safety of users.</li>
-      <li><strong>Business transfer:</strong> If the app is acquired or merged, your data may transfer to the new owner subject to the same privacy protections.</li>
-    </ul>
-    <p>We <strong>never</strong> sell your personal data to third parties.</p>
-  </section>
-
-  <!-- 7. Data Retention -->
-  <section>
-    <h2><span class="icon">🗓️</span> 7. Data Retention</h2>
-    <p>We retain your data for as long as your account is active or as needed to provide the service. If you delete your account, we will delete your personal data within 30 days, except where retention is required by law.</p>
-    <p>Anonymised, aggregated analytics data (which cannot identify you) may be retained indefinitely for product improvement purposes.</p>
-  </section>
-
-  <!-- 8. Your Rights -->
-  <section>
-    <h2><span class="icon">🛡️</span> 8. Your Rights</h2>
-    <p>Depending on your location, you may have the following rights:</p>
-    <ul>
-      <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
-      <li><strong>Correction:</strong> Request correction of inaccurate data.</li>
-      <li><strong>Deletion:</strong> Request deletion of your account and personal data.</li>
-      <li><strong>Portability:</strong> Request your data in a portable format.</li>
-      <li><strong>Opt-out of ads:</strong> Opt out of personalised advertising via your device settings.</li>
-    </ul>
-    <p>To exercise any of these rights, email us at <strong>support@brainboost.app</strong> and we will respond within 30 days.</p>
-  </section>
-
-  <!-- 9. Children's Privacy -->
-  <section>
-    <h2><span class="icon">👶</span> 9. Children's Privacy</h2>
-    <p>Brain Boost Quiz App is rated "Everyone" on Google Play and is suitable for all ages. However, the app is not specifically directed at children under 13, and we do not knowingly collect personal data from children under 13 without parental consent.</p>
-    <p>If you believe we have inadvertently collected data from a child under 13, please contact us immediately at <strong>support@brainboost.app</strong> and we will delete the data promptly.</p>
-  </section>
-
-  <!-- 10. Security -->
-  <section>
-    <h2><span class="icon">🔒</span> 10. Security</h2>
-    <p>We implement industry-standard security measures including encryption in transit (HTTPS/TLS), secure cloud infrastructure, and access controls. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
-  </section>
-
-  <!-- 11. Changes -->
-  <section>
-    <h2><span class="icon">🔄</span> 11. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. When we make significant changes, we will notify you through the app or by email. The "Last Updated" date at the top of this page will always reflect the most recent version.</p>
-    <p>Continued use of the app after changes constitutes acceptance of the updated policy.</p>
-  </section>
-
-  <!-- Contact -->
-  <div class="contact">
-    <h3>📬 Questions or Requests?</h3>
-    <p style="margin:8px 0 4px; color:#6B7280; font-size:14px;">We're happy to help with any privacy-related questions.</p>
-    <p><a href="mailto:support@brainboost.app">support@brainboost.app</a></p>
-    <p style="margin-top:8px; font-size:13px; color:#9CA3AF;">We aim to respond within 2 business days.</p>
-  </div>
-
-</div>
-
-<footer>
-  <p>© 2026 Brain Boost Quiz App · <a href="mailto:support@brainboost.app" style="color:#7C3AED;">support@brainboost.app</a></p>
-  <p style="margin-top:4px;">This policy is effective as of April 5, 2026</p>
+<footer class="foot">
+  <p>© 2026 Brain Boost Quiz App · <a href="mailto:support@brainboost.app">support@brainboost.app</a></p>
+  <p class="foot-2">This policy is effective as of April 5, 2026</p>
 </footer>
 
+<a class="to-contents" href="#contents" aria-label="Back to contents"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#bb-list-up"/></svg></a>
+
+<script src="assets/living-layer.js" defer data-living-layer='{"character":"butterfly","calm":true,"look":"rich","finish":"satin","size":46,"mobileScale":0.75,"side":"right","colors":{"primary":"#5B21D6","secondary":"#FF5FAE","dark":"#1A0B3D","light":"#FFE39A"},"colorsOnDark":{"primary":"#FFB8DD","secondary":"#FFC83D","dark":"#1A0B3D","light":"#FFFFFF"},"dust":false,"intro":true,"introDelay":1600,"zIndex":60,"toggle":{"position":"bottom-right","bg":"#1A0B3D","fg":"#FFC83D","line":"rgba(255,200,61,.45)"}}'></script>
+<script src="assets/boost.js" defer></script>
 </body>
 </html>
